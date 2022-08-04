@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Dropdown } from "@nextui-org/react";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Dropdown disableAnimation>
+      <Dropdown.Button flat>Trigger</Dropdown.Button>
+      <Dropdown.Menu aria-label="Static Actions">
+        <Dropdown.Item key="new">New file</Dropdown.Item>
+        <Dropdown.Item key="copy">Copy link</Dropdown.Item>
+        <Dropdown.Item key="edit">Edit file</Dropdown.Item>
+        <Dropdown.Item key="delete" color="error">
+          Delete file
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
   );
 }
-
-export default App;
